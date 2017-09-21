@@ -7,6 +7,7 @@ import Home from './components/views/Home';
 import ProjectsPage from './components/ProjectsPage';
 import Resume from './components/views/Resume';
 import Contact from './components/views/Contact';
+import Project from './components/Project'
 
 class App extends Component {
   render() {
@@ -31,10 +32,11 @@ class App extends Component {
             */
           }
             <Switch>
-              <Route path="/home" component={Home} />
+              <Route path="/projects/:id" component={Project} />
               <Route path="/projects" component={ProjectsPage} />
               <Route path="/resume" component={Resume} />
               <Route path="/contact" component={Contact} />
+              <Route path="/" component={Home} />
             </Switch>
         </main>
       </div>
@@ -42,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
